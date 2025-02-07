@@ -1,0 +1,152 @@
+/* Сброс базовых стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общий стиль страницы */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at bottom, #2A0000 0%, #000000 100%);
+  color: #CCCCCC;
+  line-height: 1.6;
+  padding-bottom: 60px; /* чтобы подвал не перекрывал контент */
+}
+
+/* Шапка страницы */
+header {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-bottom: 3px solid #8B0000;
+  text-align: center;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-icon {
+  width: 192px;
+  height: 192px;
+  margin: 0 20px;
+}
+
+/* Раскладка главного контейнера экипажа */
+.crew-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Скрываем радио-инпуты */
+.crew-container input[type="radio"] {
+  display: none;
+}
+
+/* Левая панель (sidebar) с кнопками */
+.crew-sidebar {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Стили для кнопок экипажа */
+.crew-button {
+  display: block;
+  background: rgba(20, 0, 0, 0.8);
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  padding: 15px;
+  color: #8B0000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+/* Hover-эффект для кнопок */
+.crew-button:hover {
+  background: rgba(30, 0, 0, 0.9);
+  transform: scale(1.02);
+}
+
+/* Пульсирующий (мигающий) эффект для выбранной кнопки */
+#crew1:checked ~ .crew-sidebar label[for="crew1"],
+#crew2:checked ~ .crew-sidebar label[for="crew2"],
+#crew3:checked ~ .crew-sidebar label[for="crew3"] {
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Правая панель с информацией */
+.crew-details {
+  flex-grow: 1;
+  background: rgba(20, 20, 20, 0.95);
+  padding: 20px;
+  margin-left: 20px;
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* По умолчанию скрываем все блоки с информацией */
+.crew-info {
+  display: none;
+}
+
+/* Отображаем нужный блок в зависимости от выбранного радио-инпута */
+#crew1:checked ~ .crew-details #info1,
+#crew2:checked ~ .crew-details #info2,
+#crew3:checked ~ .crew-details #info3 {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Стили для фотографий членов экипажа */
+.crew-photo {
+  max-width: 100%;
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Заголовки в блоках информации */
+.crew-info h2 {
+  font-size: 2rem;
+  color: #8B0000;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Абзацы с описанием и списки */
+.crew-info p {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* Подвал */
+footer {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px;
+  text-align: center;
+  border-top: 3px solid #8B0000;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  color: #CCCCCC;
+}
