@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Конструктор таблиц инициативы</title>
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<div class="header">
+  <div class="container">
+    <div class="image-container">
+      <img src="Source/crusader.png" alt="Altidia World Logo">
+    </div>
+    <h1 class="title">Конструктор таблиц инициативы</h1>
+    <div class="buttons">
+      <a href="site.html">На главную</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <h2>Создайте таблицу инициативы для боя</h2>
+  <form id="initiativeForm" class="full-width">
+    <label for="participants" class="label-style">Количество участников:</label>
+    <input type="number" id="participants" name="participants" min="1" max="20" placeholder="Сколько хочешь, но не больше 20. Монстр..." required class = "form-input">
+    <br><br>
+    <label for="initiativeDice" class="label-style">Тип броска инициативы:</label>
+    <select id="initiativeDice" name="initiativeDice" class="form-input">
+      <option value="d20">d20</option>
+      <option value="d12">d12</option>
+      <option value="d10">d10</option>
+      <option value="d8">d8</option>
+    </select>
+    <br><br>
+    <label for="includeHealth" class="label-style">Добавить колонку для здоровья?</label>
+    <input type="checkbox" id="includeHealth" name="includeHealth" class="form-checkbox">
+    <br><br>
+    <button type="submit" class="big-button">Сгенерировать таблицу</button>
+  </form>
+
+  <div id="tableContainer" class="table-section"></div>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2024 Altidia World Wiki, все права защищены И ПРИНАДЛЕЖАТ МНЕ!.</p>
+</footer>
+
+<script src="Scripts/initiative_table.js"></script>
+</body>
+</html>

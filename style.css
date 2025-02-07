@@ -1,0 +1,152 @@
+/* 
+  Палитра для имперского оформления:
+  - Чёрный и его вариации
+  - Глубокий красный (оттенки от #2A0000 до #8B0000)
+*/
+
+/* Сброс базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Основные стили для body */
+  body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(ellipse at bottom, #2A0000 0%, #000000 100%);
+    color: #CCCCCC;
+    line-height: 1.6;
+  }
+  
+  /* Стили для шапки сайта */
+  header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #8B0000;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-icon {
+    width: 128px;
+    height: 128px;
+    margin: 0 20px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: #8B0000;
+  }
+  
+  .slogan {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #8B0000;
+  }
+  
+  /* Контейнер для основного контента */
+  .content-wrapper {
+    position: relative;
+    padding: 20px;
+    /* Для удобного расположения можно использовать flex */
+    display: flex;
+  }
+  
+  /* Сайдбар с навигационными вкладками */
+  .sidebar {
+    width: 250px;
+  }
+  
+  /* Отдельная вкладка */
+  .tab {
+    position: relative; /* Для позиционирования превью относительно родителя */
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(20, 0, 0, 0.8);
+    border: 1px solid rgba(139, 0, 0, 0.7);
+    border-radius: 10px;
+    text-align: left;
+    transition: background 0.3s ease;
+  }
+  
+  .tab:hover {
+    background: rgba(30, 0, 0, 0.9);
+  }
+  
+  /* Кнопка-вкладка */
+  .tab-button {
+    font-size: 1.3rem;
+    color: #8B0000;
+    text-decoration: none;
+  }
+  
+  .tab-button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Описание вкладки */
+  .tab-description {
+    font-size: 0.9rem;
+    color: #CCCCCC;
+    margin-top: 5px;
+  }
+  
+  /* Превью – скрыто по умолчанию */
+  .preview {
+    display: none;
+    position: absolute;
+    left: 270px; /* отступ от левого края .tab (ширина сайдбара + отступ) */
+    top: 0;
+    width: 400px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 10;
+    /* Добавим лёгкую анимацию появления */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* При наведении на вкладку – показать превью */
+  .tab:hover .preview {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Стили для изображения в превью */
+  .preview img {
+    width: 100%;
+    border: 3px solid #8B0000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Текст в превью */
+  .preview p {
+    font-size: 1rem;
+    color: #CCCCCC;
+  }
+  
+  /* Стили для подвала */
+  footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    text-align: center;
+    border-top: 3px solid #8B0000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    color: #CCCCCC;
+  }
+  
